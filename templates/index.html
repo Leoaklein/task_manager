@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Define a visualização para dispositivos móveis com escala inicial de 1.0 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define o título da página que aparece na aba do navegador -->
     <title>Task Manager</title>
+    <!-- Inclui o arquivo CSS para estilizar a página, usando a URL gerada pelo Flask -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- Cria uma div com a classe 'container' para centralizar e estilizar o conteúdo -->
     <div class="container">
+        <!-- Exibe o título principal da página -->
         <h1>Task Manager</h1>
+        <!-- Cria um formulário para adicionar novas tarefas -->
         <form action="{{ url_for('main.add_task') }}" method="POST">
+            <!-- Campo de entrada para o título da nova tarefa -->
             <input type="text" name="title" placeholder="New Task">
+            <!-- Botão para submeter o formulário e adicionar a nova tarefa -->
             <button type="submit">Add Task</button>
         </form>
 
+        <!-- Lista as tarefas existentes -->
         <ul>
+            <!-- Itera sobre a lista de tarefas fornecida pelo contexto do Flask -->
             {% for task in tasks %}
+                <!-- Cria um item de lista para cada tarefa -->
                 <li class="{{ 'done' if task.done else '' }}">
+                    <!-- Exibe o título da tarefa -->
                     {{ task.title }}
+                    <!-- Link para alternar o status da tarefa (marcar como feita ou não) -->
                     <a href="{{ url_for('main.update_task', task_id=task.id) }}">[Toggle]</a>
+                    <!-- Link para deletar a tarefa -->
                     <a href="{{ url_for('main.delete_task', task_id=task.id) }}">[Delete]</a>
                 </li>
             {% endfor %}

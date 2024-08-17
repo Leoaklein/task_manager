@@ -1,35 +1,55 @@
+/* Define o estilo geral do corpo da página */
 body {
+    /* Define a fonte da página como Arial, com uma fonte alternativa sans-serif se Arial não estiver disponível */
     font-family: Arial, sans-serif;
+    /* Define a cor de fundo da página como um cinza claro */
     background-color: #f4f4f4;
 }
 
+/* Estilo para o container centralizado da página */
 .container {
+    /* Define a largura do container como 50% da largura da tela */
     width: 50%;
+    /* Centraliza o container horizontalmente */
     margin: 0 auto;
+    /* Adiciona um espaçamento interno superior de 50 pixels */
     padding-top: 50px;
 }
 
+/* Estilo para tarefas concluídas */
 .done {
+    /* Aplica uma linha de corte no texto para indicar que a tarefa está concluída */
     text-decoration: line-through;
+    /* Define a cor do texto como cinza */
     color: gray;
 }
 
+/* Estilo para o campo de entrada de texto */
 input[type="text"] {
+    /* Define a largura do campo de entrada como 80% da largura do container */
     width: 80%;
+    /* Adiciona um preenchimento interno de 10 pixels */
     padding: 10px;
+    /* Adiciona uma margem superior e inferior de 10 pixels */
     margin: 10px 0;
 }
 
+/* Estilo para botões */
 button {
+    /* Adiciona um preenchimento interno de 10 pixels no topo e na base, e 15 pixels nas laterais */
     padding: 10px 15px;
 }
 
+/* Estilo para a lista de tarefas */
 ul {
+    /* Remove os marcadores padrão da lista */
     list-style-type: none;
+    /* Remove o preenchimento interno padrão da lista */
     padding: 0;
 }
 
+/* Estilo para itens individuais da lista */
 li {
+    /* Adiciona uma margem superior e inferior de 10 pixels */
     margin: 10px 0;
 }
-
