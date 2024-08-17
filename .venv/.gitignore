@@ -1,0 +1,13 @@
+
+# Ambiente virtual
+venv/
+
+# Arquivos de compilação
+*.pyc
+*.pyo
+
+# Arquivos de configuração do PyCharm
+.idea/
+
+# Banco de dados
+*.db
